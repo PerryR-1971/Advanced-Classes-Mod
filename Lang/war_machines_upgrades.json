@@ -1263,7 +1263,7 @@
 						]
 					},
 					"2": {
-						"description": "{~r}@upgradeName@ level 2Upgrade{~}\n\n\nWith this upgrade the healing capacity of your First Aid Tent is increased. Bigger healing capacity allows for more resurrection of killed troops during combat.\n\nCapacity: +{600} flat and +{15%} in total\n\nWarmachine efficiency: {+15%}",
+						"description": "{~r}@upgradeName@ level 2 Upgrade{~}\n\n\nWith this upgrade the healing capacity of your First Aid Tent is increased. Bigger healing capacity allows for more resurrection of killed troops during combat.\n\nCapacity: +{600} flat and +{15%} in total\n\nWarmachine efficiency: {+15%}",
 						"resources": [
 							10,
 							0,
@@ -1322,7 +1322,7 @@
 				"name": "Treatment",
 				"levels": {
 					"1": {
-						"description": "{~r}@upgradeName@ Upgrade{~}\n\n\nWith this upgrade, your creatures have to pay you gold for every healing they receive during combat. Although this upgrade is not entirely legal in Erathia, I still recommend buying it. Most creatures are too stupid and have no idea about laws and their rights, but with some you have to be careful not to take too much from them, be careful with Dwarves, Monks but also some others. If a lawsuit should arise, I will deny that I installed this upgrade for you.\n\n3 times the heal value in gold\nWarmachine efficiency: {+5%}",
+						"description": "{~r}@upgradeName@ Upgrade{~}\n\n\nWith this upgrade, your creatures have to pay you gold for every healing they receive during combat. Although this upgrade is not entirely legal in Erathia, I still recommend buying it. Most creatures are too stupid and have no idea about laws and their rights, but with some you have to be careful not to take too much from them, be careful with Dwarves, Monks but also some others. If a lawsuit should arise, I will deny that I installed this upgrade for you.\n\n1 times the heal value in gold\nWarmachine efficiency: {+5%}",
 						"resources": [
 							0,
 							3,
@@ -1349,7 +1349,7 @@
 						]
 					},
 					"2": {
-						"description": "{~r}@upgradeName@ level 2Upgrade{~}\n\n\nWith this upgrade, creatures will pay more gold for healing.\n\n 5 times the heal value in gold\nWarmachine efficiency: {+10%}",
+						"description": "{~r}@upgradeName@ level 2 Upgrade{~}\n\n\nWith this upgrade, creatures will pay more gold for healing.\n\n 3 times the heal value in gold\nWarmachine efficiency: {+10%}",
 						"resources": [
 							0,
 							5,
@@ -1376,7 +1376,7 @@
 						]
 					},
 					"3": {
-						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\n\nWith this ultimate upgrade, theres a high chance creatures will receive permanent stat upgrades when healed by the First Aid tent.\n\nChance for stat upgrade: {50%}\nIncreased gold return (7 times the healed amount)\nWarmachine efficiency: +{25%}",
+						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\n\nWith this ultimate upgrade, theres a high chance creatures will receive permanent stat upgrades when healed by the First Aid tent.\n\nChance for stat upgrade: {50%}\nIncreased gold return (5 times the healed amount)\nWarmachine efficiency: +{25%}",
 						"resources": [
 							5,
 							10,
@@ -1972,7 +1972,7 @@
 						]
 					},
 					"3": {
-						"description": "{~orange}Ultimate @upgradeName@ Enchantment{~}\n\n\nThe ultimate enchantment will cast all shield spells for one round on all your creatures.\n\nAffects all troops for one round\n\nShield Power: {50%}\n\nWarmachine efficiency: {+25%}",
+						"description": "{~orange}Ultimate @upgradeName@ Enchantment{~}\n\n\nThe ultimate enchantment will cast all shield spells for one round on all your creatures.\n\nAffects all troops for one round\n\nShield Power: {33%}\n\nWarmachine efficiency: {+15%}",
 						"resources": [
 							0,
 							7,

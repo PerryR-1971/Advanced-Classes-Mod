@@ -112,17 +112,13 @@ Basic Leadership increases your hero's troops' morale by 1.
 189519	{~Red}Advanced Leadership{~}
 
 Advanced Leadership increases your hero's troops' morale by 2.
-189520	{~Red}Expert Leadership{~}
-
-Expert Leadership increases your hero's troops' morale by 3.
+189520	{~Red}Expert Leadership{~}Expert Leadership increases your hero's troops' morale by 3 and allows you to mix one unit of a foreign alignment without penalty.
 189719	{~Red}Master Leadership{~}
 
-Master Leadership increases your hero's troops' morale by 4.
-Also, creatures who had moral in combat will deal bonus damage with their next attack. 
+Master Leadership increases your hero's troops' morale by 4 and allows you to mix two units of a foreign alignment without penalty.
 189720	{~Red}Grandmaster Leadership{~}
 
-Grandmaster Leadership increases your hero's troops' morale by 5.
-Also, creatures who had moral in combat will deal bonus damage with their next attack.
+Grandmaster Leadership increases your hero's troops' morale by 5 and allows you to mix three units of a foreign alignment without penalty.
 
 189521	{~Red}Basic Wisdom{~}
 
@@ -189,7 +185,7 @@ Grandmaster Luck increases your hero's luck by 5 and the damage of Luck strikes 
 189530	{~Red}Basic Ballistics{~}
 
 Basic Ballistics gives control of the catapult to the hero, allowing aimed shots with increased damage and gives +2 attack in a siege.
-Also increases the the HP of War Machines by 50% and all ranged units get +1 to maximum damage. Increases Warmachine efficiency by +5%.
+Also increases the the HP of War Machines by 50% and all ranged units get +1 to maximum damage. Increases Warmachine efficiency by +5%. 
 189531	{~Red}Advanced Ballistics{~}
 
 Advanced Ballistics gives control of the catapult to the hero, allowing two aimed shots with increased damage and gives +3 attack in a siege.
@@ -197,39 +193,39 @@ Also increases the the HP of War Machines by 75% and all ranged units get +1 to 
 189532	{~Red}Expert Ballistics{~}
 
 Expert Ballistics gives control of the catapult to the hero, allowing two aimed shots at maximum damage and gives +4 attack in a siege.
-Also increases the the HP of War Machines by 100% and all ranged units get +2 to maximum damage. Increases Warmachine efficiency by +15%.
+Also increases the the HP of War Machines by 100% and all ranged units get +2 to maximum damage. Increases Warmachine efficiency by +15%. It also increases the distance for which there is no range penalty by +1.
 
 189731	{~Red}Master Ballistics{~}
 
 Master Ballistics gives control of the catapult to the hero, allowing two aimed shots at maximum damage and gives +6 attack in a siege.
-Also increases the the HP of War Machines by 150% and all ranged units get +2 to maximum damage. Increases Warmachine efficiency by +20%.
+Also increases the the HP of War Machines by 150% and all ranged units get +2 to maximum damage. Increases Warmachine efficiency by +20%. It also increases the distance for which there is no range penalty by +2.
 189732	{~Red}Grandmaster Ballistics{~}
 
 Grandmaster Ballistics gives control of the catapult to the hero, allowing two aimed shots at maximum damage and gives +8 attack in a siege.
-Also increases the the HP of War Machines by 200% and all ranged units get +3 to maximum damage. Increases Warmachine efficiency by +25%.
+Also increases the the HP of War Machines by 200% and all ranged units get +3 to maximum damage. Increases Warmachine efficiency by +25%. It also increases the distance for which there is no range penalty by +3.
 
 189533	{~Red}Basic Eagle Eye{~}
 
-Basic Eagle Eye gives your hero a 50% chance to learn any 1st or 2nd level spell used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
+Basic Eagle Eye gives your hero a 40% chance to learn any 1st or 2nd level spell used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
 
 {~orange}Magic Artillery{~} 
 Shoots a ray of magic energy at the enemy before combat. The damage is based on your spell power.
 189534	{~Red}Advanced Eagle Eye{~}
 
-Advanced Eagle Eye gives your hero a 65% chance to learn any spell up to 3rd level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
+Advanced Eagle Eye gives your hero a 55% chance to learn any spell up to 3rd level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
 
 {~orange}Magic Artillery{~} 
 Shoots a ray of magic energy at the enemy before combat. The damage is based on your spell power.
 
 189535	{~Red}Expert Eagle Eye{~}
 
-Expert Eagle Eye gives your hero a 75% chance to learn any spell up to 4th level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
+Expert Eagle Eye gives your hero a 65% chance to learn any spell up to 4th level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power.
 
 {~orange}Magic Artillery{~}
 Shoots a ray of magic energy at the enemy before combat. The damage is based on your spell power.
 189734	{~Red}Master Eagle Eye{~}
 
-Master Eagle Eye gives your hero a 85% chance to learn any spell up to 5th level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power. Adds +2 to your Magic Strength.
+Master Eagle Eye gives your hero a 75% chance to learn any spell up to 5th level used in combat. When learning spells with Eagle Eye the hero gains +1 Spell Power. Adds +2 to your Magic Strength.
 
 {~orange}Magic Artillery{~} 
 Shoots a ray of magic energy at the enemy before combat. The damage is based on your spell power.
@@ -1641,22 +1637,22 @@ With 3 Pieces: Reduces enemy Magic Crit chance/dmg by 25%/40%, mass {Magic Mirro
 188159	free
 188160	{Necklace of Swiftness}
 
-Worn about the neck, this necklace increases the combat speed of all your units by +1 and grants a 4% chance to completely evade attacks.
+Worn about the neck, this necklace increases the combat speed of all your units by +1 and grants a 3% chance to completely evade attacks.
 
 {~Red}Pegasus Harness{~}:
-With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {15}% change to dodge attacks
+With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {10}% change to dodge attacks
 188161	{Ring of the Wayfarer}
 
-When placed on the finger, this ring increases the combat speed of all your units by +1 and grants a 4% chance to completely evade attacks.
+When placed on the finger, this ring increases the combat speed of all your units by +1 and grants a 3% chance to completely evade attacks.
 
 {~Red}Pegasus Harness{~}:
-With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {15}% change to dodge attacks
+With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {10}% change to dodge attacks
 188162	{Cape of Velocity}
 
 Worn about the shoulders, this cape increases the combat speed of all your units by +2.
 
 {~Red}Pegasus Harness{~}:
-With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {15}% change to dodge attacks
+With 3 Pieces: {Speed Bonus} for the slowest unit in your army and a total of {10}% change to dodge attacks
 188163	{Titan's Gladius }
 
 Held with the right hand, this massive relic increases your Attack skill by +12, but reduces your Defense skill by -3.
