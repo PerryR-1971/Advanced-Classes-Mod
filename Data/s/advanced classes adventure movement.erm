@@ -1,0 +1,82 @@
+ZVSE2
+
+; X1 hero, X2 spell, X3 result: actual school rank, including ACM Master/GM.
+!?FU(ACM_Adventure_Spell_Rank);
+!!VRx3:S0;
+!!SSx2:S?(schools:y);
+!!re (skill:y)/14/17;
+  !!VR(bit:y)&(skill)=14:S2;
+  !!VR(bit)&(skill)=15:S1;
+  !!VR(bit)&(skill)=16:S4;
+  !!VR(bit)&(skill)=17:S8;
+  !!VR(matches:y):S(schools) :(bit) %2;
+  !!if&(matches)=1;
+    !!HEx1:S(skill)/?(candidate:y);
+    !!if&(candidate)=3;
+      !!VR(school:z)&(skill)=14:S^Fire Magic^;
+      !!VR(school)&(skill)=15:S^Air Magic^;
+      !!VR(school)&(skill)=16:S^Water Magic^;
+      !!VR(school)&(skill)=17:S^Earth Magic^;
+      !!SN:W^H3_%(school)_0_Hero%X1^/?(master:y);
+      !!SN:W^H3_%(school)_1_Hero%X1^/?(grandmaster:y);
+      !!VR(candidate)&(master)=1:S4;
+      !!VR(candidate)&(master)=1/(grandmaster)=1:S5;
+    !!en;
+    !!VRx3&(candidate)>x3:S(candidate);
+  !!en;
+!!en;
+
+; Native human-casting paths, verified against h3era.exe.
+!?FU(ACM_CreateERMHook);
+!#VA(setHook:x);
+!!SN:E(setHook)/1/4314147/(ACM_DD_Movement); 41D423: sub eax,ecx; mov [esi+4D],eax
+!!SN:E(setHook)/1/4311257/(ACM_Fly_Movement); 41C8D9: successful Fly branch, before applying spell
+
+!?FU(ACM_DD_Movement);
+!#VA(hook:x);
+!!UN:C(hook)/(STRUCT_HOOK_CONTEXT_ESI)/4/?(heroPtr:y);
+!!UN:C(heroPtr)/26/4/?(hero:y);
+!!FU(ACM_Adventure_Spell_Rank):P(hero)/(SPELL_DIMENSION_DOOR)/?(rank:y);
+!!VR(cost:y):S300;
+!!VR(cost)&(rank)>=4:S5 -(rank) *100 +100;
+!!UN:C(hook)/(STRUCT_HOOK_CONTEXT_ECX)/4/(cost);
+; The original subtraction, clamp to zero and movement redraw remain native.
+
+!?FU(ACM_Fly_Movement);
+!#VA(hook:x);
+!!UN:C(hook)/(STRUCT_HOOK_CONTEXT_ESI)/4/?(heroPtr:y);
+!!UN:C(heroPtr)/26/4/?(hero:y);
+!!FU(ACM_Adventure_Spell_Rank):P(hero)/(SPELL_FLY)/?(rank:y);
+!!VR(cost:y):S5 -(rank) *50;
+!!HE(hero):W?(remaining:y)/1;
+!!if&(remaining)<(cost);
+  !!SN:T^ACM_Adventure_Movement.Not_Enough^/?(message:z)/^movement^/(cost);
+  !!IF:M(message);
+  !!UN:C(hook)/(STRUCT_HOOK_CONTEXT_RET)/4/4311521; 41C9E1: dispatcher epilogue
+  !!SN:X?t/0; [Skip original instructions; no Fly effect or mana is consumed]
+!!el;
+  !!VR(remaining):-(cost);
+  !!HE(hero):W(remaining)/1;
+!!en;
+
+; Append cost to the existing localized description, preserving flight effects.
+!?FU(ACM_Fly_Description);
+!!FU(ACM_Fly_Restore):P;
+!!FU(ACM_Adventure_Spell_Rank):Px1/(SPELL_FLY)/?(rank:y);
+!!VR(level:y):S(rank);
+!!VR(level)&(level)>3:S3;
+!!VR(field:y):S(SPELL_TEXT_DESCR) +(level);
+!!SN:H^spell^/(SPELL_FLY)/(field)/?(original:z);
+!!VRs^ACM_Fly_Original_Description^:S(original);
+!!VRi^ACM_Fly_Description_Field^:S(field);
+!!VRi^ACM_Fly_Description_Active^:S1;
+!!VR(cost:y):S5 -(rank) *50;
+!!SN:T^ACM_Adventure_Movement.Fly_Cost^/?(suffix:z)/^movement^/(cost);
+!!VR(original):+(suffix);
+!!SN:H^spell^/(SPELL_FLY)/(field)/(original);
+
+!?FU(ACM_Fly_Restore);
+!!FU&i^ACM_Fly_Description_Active^<>1:E;
+!!VR(original:z):Ss^ACM_Fly_Original_Description^;
+!!SN:H^spell^/(SPELL_FLY)/i^ACM_Fly_Description_Field^/(original);
+!!VRi^ACM_Fly_Description_Active^:S0;

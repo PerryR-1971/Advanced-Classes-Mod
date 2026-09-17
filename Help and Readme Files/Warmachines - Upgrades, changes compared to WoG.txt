@@ -16,9 +16,12 @@ With version 1.095, the mod introduces a new stat called 'Warmachine Efficiency'
 There are several sources from which to obtain this stat. The main sources are Warmachine upgrades at levels 2 and 3.
 
 First Aid Tent:
-First Aid tents now resurrect during and after combat, but have limited healing power called 'Heal Capacity'. This is shown in the bonus list and by right-clicking your tent during combat. It is equal to 2% of your total army HP, plus any other bonuses from skills, artefacts and WM upgrades. This ensures that you cannot prolong a fight until all your units are fully recovered, which was a common occurrence in WoG.
+First Aid tents now resurrect during and after combat, but have limited healing power called 'Heal Capacity'. This is shown in the bonus list and by right-clicking your tent during combat. It is equal to 1.5% of your total army HP, plus any other bonuses from skills, artefacts and WM upgrades. This ensures that you cannot prolong a fight until all your units are fully recovered, which was a common occurrence in WoG.
 
 The damage of the Ballista scales with your hero's attack, multiplied by the Ballista's base damage. Therefore, skills and artefacts that increase the base damage are very valuable for increasing your damage output.
 
 The Ammo Cart provides your troops with unlimited shots.
 It also restores some spell points after combat and increases the damage of certain secondary skill effects. Right-click on the hero backpack for more information.
+Heal Capacity First Aid bonus (both battle sides): Basic +100, Advanced +200, Expert +300, Master +500, Grandmaster +1000 HP.
+
+Additional tent healing during combat: base 30/50/75/150/250 HP (Basic to Grandmaster First Aid) + 6 x hero level below level 25, or + 10 x hero level at level 25 and above. Other healing bonuses apply before rolling approximately 50-100% of the resulting value. Native tent healing is separate.

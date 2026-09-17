@@ -1,6 +1,35 @@
 Changelog
 ***************************************************************************************************************************************************************
 
+Version 1.12 (17.September 2026)
+
+New and balance:
+- Added Field Training: permanent hero-bound creature-family upgrades, class-dependent training capacity, economy-specialist bonuses, Mithril exchanges, an armory dialog and Act First. Upgrade costs are 1000 x next level squared + 5000 Gold.
+- Added Master and Grandmaster names for adventure spells and extended Dimension Door and Fly handling, with updated spell descriptions and movement costs.
+- Changed Archery bonuses to 20/30/40/50/60% for Basic through Grandmaster.
+- First Aid Heal Capacity now uses 1.5% of army strength plus 100/200/300/500/1000 by skill rank. Healing scales with 6 x hero level, increasing to 10 x level from level 25. Capacity accounting uses actual healing; resurrection checks were corrected.
+- Improved Druid Natural Resistance scaling and added its +2 HP bonus.
+- Added a persistent per-hero Ballista stack-kill counter, displayed in red, including opening shots and Fireball upgrade kills.
+- Fortification limits physical damage per hit to 40%/30% of maximum HP at ranks I/II and grants physical immunity at III. An Ammo Cart with Booby Trap is excluded.
+- Completed Maintainability III and corrected warmachine upgrade and enchantment descriptions.
+- Added standalone settings access through the System Options icon and a persistent Hide at map start setting.
+
+Fixes:
+- Corrected multicast handling and its display, Magic Strength calculations, and selected Spell Trainer accounting and description paths.
+- Reworked positive Luck state handling to avoid transferring effects between attacks and targets; negative Luck remains native.
+- Unified Incinerate damage storage per target, retaining the special stack-0 round handling.
+- Corrected warmachine upgrade formulas, probabilities, side handling and effect application, including Magic Arrow, Booby Trap, Versatility, Spell Trigger, Shield Enchantment, Enhanced Arrows and Treatment.
+- Fixed issues in commander progression, specializations, mastery checks, Advanced Classes, artifact sets and hero specialties. Arena class points can only be awarded once.
+- Corrected daily/adventure event handling, resource rewards and playtime tracking, plus selected Warfare, Resistance, Estates, Diplomacy and Eagle Eye paths.
+- Improved hero/owner validation and attacker/defender consistency in combat, AI and multiplayer paths; separated local messages from reward processing where required.
+- General commander Fear now preserves target flags. Corrected Caster/Arch Mage critical bonuses, hero-0 support, summon searches at battlefield edges, Astral Spirit artifact checks and commander resistance probabilities.
+- Added missing control-flow block endings. Eagle Eye and Diplomacy retain numeric ERM 1 local variables in their ERM 1 blocks.
+
+Experimental test scripts:
+- Arrow Volley: CTRL-click an enemy during the Ballista turn to fire up to ten arrows, then disable the Ballista for the rest of the battle.
+- Emergency Aid: CTRL-click an allied target during the Tent turn to spend all remaining Heal Capacity at 50% efficiency. Resurrection requires First Aid.
+- Both abilities include battle-log feedback and dedicated test guides. These remain prototypes requiring further in-game checks; the proposed three-abilities-per-machine system is not included.
+
 Version 1.11 Release (1.July 2026)
 
 - The Fire Mage's kill count has been reduced to a 30% chance per attack, rather than stacking on kills (it was steamrolling too quickly under certain conditions).

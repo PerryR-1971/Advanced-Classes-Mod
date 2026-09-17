@@ -1,6 +1,6 @@
 ﻿# Advanced Classes Mod
 
-**Advanced Classes Mod 1.11** for *Heroes of Might and Magic III: ERA 3* expands hero development with new classes, advanced skill progression, commanders, artifacts, spells, warmachines and extensive gameplay options.
+**Advanced Classes Mod 1.12** for *Heroes of Might and Magic III: ERA 3* expands hero development with new classes, advanced skill progression, commanders, artifacts, spells, warmachines and extensive gameplay options.
 
 Created by **PerryR**, with important contributions by **AlfWithCake** and **anti-victor**.
 
@@ -61,7 +61,7 @@ The documentation folder contains focused guides for artifacts, commanders, hero
 
 ## Current release
 
-Version **1.11** includes, among other changes, updates to Fire Mage, Eagle Eye, Diplomacy, commander aura configuration, Ballistics and creature-related mechanics. See the [changelog](changelog.txt) for the complete release history and technical notes.
+Version **1.12** adds Field Training, extended adventure spell progression, warmachine and healing changes, and fixes across combat, commanders, classes, artifacts and secondary skills. Arrow Volley and Emergency Aid are included as experimental test scripts; see their guides for controls and remaining in-game checks. See the [changelog](changelog.txt) for the complete release history and technical notes.
 
 ## Feedback and support
 

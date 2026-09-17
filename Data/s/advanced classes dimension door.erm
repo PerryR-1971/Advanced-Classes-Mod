@@ -1,0 +1,74 @@
+ZVSE2
+
+; Human adventure casting: keep the per-hero values alive after the book closes,
+; until the target selection/cast returns. No custom cast counter is incremented.
+!?MG0;
+!!OW:C?(player:y);
+!!OW:A(player)/?i^ACM_DD_Casting_Hero^;
+!!VRi^ACM_DD_Casting^:S1;
+
+!?MG1;
+!!VRi^ACM_DD_Casting^:S0;
+!!FU(ACM_Fly_Restore):P;
+!!FU(ACM_DD_Restore):P;
+!!FU(ACM_Adventure_Spell_Titles):P-1;
+
+!?FU(ACM_DD_Restore);
+!!FU&i^ACM_DD_Active^<>1:E;
+!!SS(SPELL_DIMENSION_DOOR):Ci^ACM_DD_Original_Level^/i^ACM_DD_Original_Cost^;
+!!SS(SPELL_DIMENSION_DOOR):Ei^ACM_DD_Original_Level^/i^ACM_DD_Original_Limit^;
+!!VR(original:z):Ss^ACM_DD_Original_Description^;
+!!SN:H^spell^/(SPELL_DIMENSION_DOOR)/i^ACM_DD_Original_Field^/(original);
+!!VRi^ACM_DD_Active^:S0;
+
+; X1: hero ID. Only Master/Grandmaster use escalating SP costs.
+!?FU(ACM_DD_Apply);
+!!FU(ACM_DD_Restore):P;
+!!FU|x1<0/x1>155:E;
+!!FU(ACM_Adventure_Spell_Rank):Px1/(SPELL_DIMENSION_DOOR)/?(rank:y);
+!!VR(level:y):S(rank);
+!!VR(level)&(level)>3:S3;
+!!VR(field:y):S(SPELL_TEXT_DESCR) +(level);
+!!SS(SPELL_DIMENSION_DOOR):E(level)/?(limit:y);
+!!FU&(limit)<=0:E; [Respect disabled Dimension Door]
+
+; Expert also needs an original-text backup (the title helper handles M/GM).
+!!if&i^ACM_Adventure_Title_Saved_8^<>1;
+  !!SN:H^spell^/(SPELL_DIMENSION_DOOR)/(SPELL_TEXT_DESCR_EXPERT)/?(original:z);
+  !!VRs^ACM_Adventure_Expert_Text_8^:S(original);
+  !!VRi^ACM_Adventure_Title_Saved_8^:S1;
+!!en;
+
+; H3Hero +0x10D: native daily DD counter; saved/reset by the game itself.
+; Reference: RoseKavalier/H3Plugins, H3API H3Structures.hpp, dimDoorCastCount.
+!!HEx1:Z?(hero:y);
+!!UN:C(hero)/269/1/?(casts:y);
+!!VR(cost:y):S40;
+!!VR(cost)&(rank)>=4/(casts)=1:S60;
+!!VR(cost)&(rank)>=4/(casts)>=2:S100;
+!!SS(SPELL_DIMENSION_DOOR):C(level)/?i^ACM_DD_Original_Cost^;
+!!VRi^ACM_DD_Original_Level^:S(level);
+!!VRi^ACM_DD_Original_Field^:S(field);
+!!SN:H^spell^/(SPELL_DIMENSION_DOOR)/(field)/?(savedText:z);
+!!VRs^ACM_DD_Original_Description^:S(savedText);
+!!VRi^ACM_DD_Original_Limit^:S(limit);
+!!VRi^ACM_DD_Active^:S1;
+!!VR(limit)&(rank)>=3:S2;
+!!VR(limit)&(rank)=5:S3;
+!!SS(SPELL_DIMENSION_DOOR):C(level)/(cost) E(level)/(limit);
+!!VR(movement:y):S300;
+!!VR(movement)&(rank)>=4:S5 -(rank) *100 +100;
+
+!!SN&(rank)=0:T^AC_Spells.Spell_Normal^/?(rankName:z);
+!!SN&(rank)=1:T^AC_Spells.Spell_Basic^/?(rankName);
+!!SN&(rank)=2:T^AC_Spells.Spell_Advanced^/?(rankName);
+!!SN&(rank)=3:T^AC_Spells.Spell_Expert^/?(rankName);
+!!SN&(rank)=4:T^AC_Spells.Spell_Master^/?(rankName);
+!!SN&(rank)=5:T^AC_Spells.Spell_Grandmaster^/?(rankName);
+!!VR(color:z):S^g^;
+!!VR(color)&(rank)=4:S^DodgerBlue^;
+!!VR(color)&(rank)=5:S^r^;
+!!SN:T^ACM_Dimension_Door.Next_Cast^/?(status:z)/^cost^/(cost);
+!!SN&(casts)>=(limit):T^ACM_Dimension_Door.Daily_Limit_Reached^/?(status);
+!!SN:T^ACM_Dimension_Door.Description_%(rank)^/?(text:z)/^rank^/(rankName)/^color^/(color)/^casts^/(casts)/^status^/(status)/^movement^/(movement);
+!!SN:H^spell^/(SPELL_DIMENSION_DOOR)/(field)/(text);

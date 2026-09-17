@@ -1,0 +1,41 @@
+Dimension Door: Master and Grandmaster
+
+Human adventure-map casting:
+- None/Basic/Advanced: 1 cast per hero per day, 40 SP, 300 movement per cast.
+- Expert: 2 casts per hero per day, 40 SP each, 300 movement per cast.
+- Master: 2 casts per hero per day, 40/60 SP, 200 movement per cast.
+- Grandmaster: 3 casts per hero per day, 40/60/100 SP, 100 movement per cast.
+- These are the final spell-table costs, without ACM's Sorcery surcharge.
+- The school is read from the spell data (Water Magic in ACM).
+- Range and destination restrictions are unchanged.
+- The native rule allowing a cast with positive movement and clamping the
+  remaining movement to zero is preserved.
+- The native daily counter is used, including casts made before a mastery upgrade.
+- Closing the book, switching heroes and leaving the cast restores spell values.
+
+Implementation uses MG0/MG1, which ERA exposes for human players only.
+AI casting retains its existing behavior.
+
+In-game verification still required:
+1. None/Basic/Advanced: 40 SP and 300 movement; Expert: 40 SP and 300 movement
+   for each of its two casts. No cost escalation below Master.
+2. Master: spend 40, then 60 SP and 200 movement per cast; no third cast.
+3. Grandmaster: spend 40/60/100 SP and 100 movement per cast; no fourth cast.
+4. On Master/GM, with 59 SP before cast 2 or 99 SP before cast 3, casting is
+   unavailable. On Expert, cast 2 costs only 40 SP.
+5. Cancel the spellbook or target selection: no extra cast or SP is consumed.
+6. Switch heroes: costs, descriptions and daily limits match the new hero.
+7. Save/load after cast 1: Expert stays at 40 SP; Master/GM stays at 60 SP.
+8. Next day: first cast costs 40 SP again; another hero has an independent count.
+9. Check opening the book from the hero screen and visiting a mage guild.
+
+Fly (human casting):
+- Movement per cast: None 250, Basic 200, Advanced 150, Expert 100, Master 50,
+  Grandmaster 0. The current flight effect and spell-point costs are retained.
+- Base SP costs: 32/28/24/20/20/20. ACM's spellbook Sorcery surcharge is unchanged.
+- Insufficient movement blocks casting before the Fly effect or SP deduction.
+- Test each rank with exact movement, one point too few, and zero on Grandmaster.
+- Casting again while Fly is already active keeps the native behavior.
+
+Native counter reference (H3Hero +0x10D / dimDoorCastCount):
+https://github.com/RoseKavalier/H3Plugins/blob/master/H3API/lib/h3api/H3Structures/H3Structures.hpp

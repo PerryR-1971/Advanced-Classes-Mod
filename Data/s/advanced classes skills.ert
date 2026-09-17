@@ -18,20 +18,20 @@ Grandmaster Pathfinding eliminates movement penalty on rough terrain and elimina
 
 189503	{~Red}Basic Archery{~}
 
-Basic Archery increases the damage done by range attacking creatures by 10%.
+Basic Archery increases the damage done by range attacking creatures by 20%.
 
 189504	{~Red}Advanced Archery{~}
 
-Advanced Archery increases the damage done by range attacking creatures by 25%.
+Advanced Archery increases the damage done by range attacking creatures by 30%.
 189505	{~Red}Expert Archery{~}
 
-Expert Archery increases the damage done by range attacking creatures by 50%.
+Expert Archery increases the damage done by range attacking creatures by 40%.
 189704	{~Red}Master Archery{~}
 
-Master Archery increases the damage done by range attacking creatures by 65%.
+Master Archery increases the damage done by range attacking creatures by 50%.
 189705	{~Red}Grandmaster Archery{~}
 
-Grandmaster Archery increases the damage done by range attacking creatures by 75%.
+Grandmaster Archery increases the damage done by range attacking creatures by 60%.
 
 189506	{~Red}Basic Logistics{~}
 
@@ -507,23 +507,23 @@ Also, reduces all normal and crit magic damage by 30%.
 
 189581	{~Red}Basic First Aid{~}
 
-Basic First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. The resurrection ability is limited. 
+Basic First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. Additional combat healing is rolled at approximately 50-100% of (30 + 6 x hero level below level 25, or 30 + 10 x hero level from level 25), before other healing bonuses. The resurrection ability is limited. Heal Capacity is 1.5% of total army HP + 100 HP, before other bonuses. 
 Also increases the life of all units by 2% and the First Aid tent revives dead troops after combat.
 189582	{~Red}Advanced First Aid{~}
 
-Advanced First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. The resurrection ability is limited. 
+Advanced First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. Additional combat healing is rolled at approximately 50-100% of (50 + 6 x hero level below level 25, or 50 + 10 x hero level from level 25), before other healing bonuses. The resurrection ability is limited. Heal Capacity is 1.5% of total army HP + 200 HP, before other bonuses. 
 Also increases the life of all units by 4% and the First Aid tent revives dead troops after combat.
 189583	{~Red}Expert First Aid{~}
 
-Expert First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. The resurrection ability is limited. 
+Expert First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. Additional combat healing is rolled at approximately 50-100% of (75 + 6 x hero level below level 25, or 75 + 10 x hero level from level 25), before other healing bonuses. The resurrection ability is limited. Heal Capacity is 1.5% of total army HP + 300 HP, before other bonuses. 
 Also increases the life of all units by 6% and the First Aid tent revives dead troops after combat.
 189784	{~Red}Master First Aid{~}
 
-Master First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. The resurrection ability is limited. 
+Master First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. Additional combat healing is rolled at approximately 50-100% of (150 + 6 x hero level below level 25, or 150 + 10 x hero level from level 25), before other healing bonuses. The resurrection ability is limited. Heal Capacity is 1.5% of total army HP + 500 HP, before other bonuses. 
 Also increases the life of all units by 8% and the First Aid tent revives dead troops after combat.
 189785	{~Red}Grandmaster First Aid{~}
 
-Grandmaster First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. The resurrection ability is limited. 
+Grandmaster First Aid gives control of the First Aid tent to the hero, healing or resurrecting wounded stacks. Additional combat healing is rolled at approximately 50-100% of (250 + 6 x hero level below level 25, or 250 + 10 x hero level from level 25), before other healing bonuses. The resurrection ability is limited. Heal Capacity is 1.5% of total army HP + 1000 HP, before other bonuses. 
 Also increases the life of all units by 10% and the First Aid tent revives dead troops after combat.
 	
 189586	Skilled in the arts of fighting warriors can train their troops and perform critical hits. Master warriors can learn all warrior skills at master level.	

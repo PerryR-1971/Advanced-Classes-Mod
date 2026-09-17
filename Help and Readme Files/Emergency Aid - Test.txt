@@ -1,0 +1,22 @@
+Emergency Aid - test ability
+
+Script: Data/s/zz acm emergency aid test.erm
+During a normal First Aid Tent turn, CTRL + left click a valid allied healing target.
+Restores up to floor(remaining Heal Capacity / 2) HP and sets that side's entire Heal Capacity to zero.
+The target cannot exceed its original creature count. First Aid is required to resurrect. Without it, only the top creature is healed.
+Summoned and cloned stacks are excluded. The normal heal action is replaced, not added.
+The ability does not repeat Overheal, Herbalism or Treatment rewards.
+Battle log: actual HP, revived creatures, full capacity spent and 50% efficiency.
+Arrow Volley already logs activation and final arrow count.
+
+Manual tests required:
+- 1000 capacity, >=500 missing HP: heal 500, capacity 0.
+- 1000 capacity, 100 missing HP: heal 100, capacity 0.
+- No First Aid: no resurrection.
+- Odd capacity: usable amount rounded down.
+- Both sides, CTRL versus ordinary click, replay and next battle.
+- With Tent upgrades: confirm no additional normal heal or bonus rewards.
+- Arrow Volley and Emergency Aid together: only the active machine's ability triggers.
+
+Prototype: not executed in the game yet.
+Remove the corresponding .erm to disable the test ability.

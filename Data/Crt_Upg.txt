@@ -1,0 +1,95 @@
+
+
+
+	#	193	-1	-1	900	600	52	-1		70
+	Pcx	100	0	0	900	600	acmtrain.pcx	2048	
+	Text	1	50	4	800	30	Field Training	BigFont.fnt	7	0	1	8	
+	Text	2	101	42	333	28	Hero, training and free points	MedFont.fnt	7	0	1	8	
+	Text	7	434	42	333	28	Gold, Mithril and exchange	MedFont.fnt	7	0	1	8	
+	D I Cr	80	170	72	58	64	TwCrPort.def	0	16	
+	D I Cr	81	250	72	58	64	TwCrPort.def	0	16	
+	D I Cr	82	330	72	58	64	TwCrPort.def	0	16	
+	D I Cr	83	410	72	58	64	TwCrPort.def	0	16	
+	D I Cr	84	490	72	58	64	TwCrPort.def	0	16	
+	D I Cr	85	570	72	58	64	TwCrPort.def	0	16	
+	D I Cr	86	650	72	58	64	TwCrPort.def	0	16	
+	Text	90	160	138	78	24	Slot 1	SmalFont.fnt	7	0	1	8	
+	Text	91	240	138	78	24	Slot 2	SmalFont.fnt	7	0	1	8	
+	Text	92	320	138	78	24	Slot 3	SmalFont.fnt	7	0	1	8	
+	Text	93	400	138	78	24	Slot 4	SmalFont.fnt	7	0	1	8	
+	Text	94	480	138	78	24	Slot 5	SmalFont.fnt	7	0	1	8	
+	Text	95	560	138	78	24	Slot 6	SmalFont.fnt	7	0	1	8	
+	Text	96	640	138	78	24	Slot 7	SmalFont.fnt	7	0	1	8	
+	Text	3	45	164	810	24	Selected creature	MedFont.fnt	7	0	1	8	
+	Text	5	117	198	310	22	Offense	MedFont.fnt	7	0	1	8	
+	Text	6	481	198	278	22	Defense and Utility	MedFont.fnt	7	0	1	8	
+	Text	201	157	216	340	40	Extra Strike	SmalFont.fnt	7	0	0	8	
+	Button	101	33	220	64	32	iok6432.def	0	
+	Text	202	157	260	340	40	Critical Chance	SmalFont.fnt	7	0	0	8	
+	Button	102	33	264	64	32	iok6432.def	0	
+	Text	203	157	304	340	40	Critical Damage	SmalFont.fnt	7	0	0	8	
+	Button	103	33	308	64	32	iok6432.def	0	
+	Text	206	157	348	340	40	Flat Damage	SmalFont.fnt	7	0	0	8	
+	Button	106	33	352	64	32	iok6432.def	0	
+	Text	207	157	392	340	40	Damage vs. Ranged	SmalFont.fnt	7	0	0	8	
+	Button	107	33	396	64	32	iok6432.def	0	
+	Text	208	157	436	340	40	Damage vs. Melee	SmalFont.fnt	7	0	0	8	
+	Button	108	33	440	64	32	iok6432.def	0	
+	Text	209	157	480	340	40	Damage vs. Undead	SmalFont.fnt	7	0	0	8	
+	Button	109	33	484	64	32	iok6432.def	0	
+	Text	204	489	216	340	40	Block	SmalFont.fnt	7	0	0	8	
+	Button	104	805	220	64	32	iok6432.def	0	
+	Text	205	489	260	340	40	Damage Reduction	SmalFont.fnt	7	0	0	8	
+	Button	105	805	264	64	32	iok6432.def	0	
+	Text	210	489	304	340	40	Combat Speed	SmalFont.fnt	7	0	0	8	
+	Button	110	805	308	64	32	iok6432.def	0	
+	Text	211	489	348	340	40	Crushing Blow	SmalFont.fnt	7	0	0	8	
+	Button	111	805	352	64	32	iok6432.def	0	
+	Text	212	489	392	340	40	Life Leech	SmalFont.fnt	7	0	0	8	
+	Button	112	805	396	64	32	iok6432.def	0	
+	Text	213	489	436	340	40	Act Again	SmalFont.fnt	7	0	0	8	
+	Button	113	805	440	64	32	iok6432.def	0	
+	Text	214	489	480	340	40	Act First	SmalFont.fnt	7	0	0	8	
+	Button	114	805	484	64	32	iok6432.def	0	
+	Pcx	9	418	532	66	34	box64x32.pcx	2048	
+	Button	30722	419	534	64	32	iok6432.def	28	
+hint area	Text hint	70	35	576	830	18		SmalFont.fnt	7	0	1	8	
+	#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

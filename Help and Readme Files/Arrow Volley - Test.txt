@@ -1,0 +1,21 @@
+Arrow Volley - experiment
+
+Script: Data/s/zz acm arrow volley test.erm
+Start a new battle with the Git version containing this script.
+During the Ballista turn, CTRL + left click a living enemy that can normally be shot.
+The ability uses a normal shooting action with a target of ten arrows total.
+If the target dies, remaining arrows are not redirected. The Ballista is disabled even if fewer arrows were needed.
+The Ballista stays on the battlefield; the ability does not destroy the owned artifact.
+Normal shooting upgrades and kill counters remain enabled. Extra-shot bonuses are replaced by the volley count.
+The combat log reports the actual number of shots for verification.
+
+Manual tests required:
+1. Durable target: verify 10 arrows with None/Basic/Advanced and Expert/Master/Grandmaster Artillery.
+2. Repeat with Additional Shot, specialist and Golden Arrow: still 10 total.
+3. Early target death: correct kill count, no further attacks on the corpse.
+4. Next rounds, morale and Artificial Glory: no further Ballista action.
+5. Attacker and defender; battle replay; next battle restores normal operation.
+6. Ordinary click, friendly target, blocked shot and another unit turn must not activate.
+
+This is an unverified in-game prototype using ACM/007 extra shots.
+To disable the experiment, remove the test .erm file before starting/loading the game.

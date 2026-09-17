@@ -34,7 +34,7 @@
 		"Treatment_HealUpgrDef": "The creature decided to upgrade its {~orange}defense by +1{~}",
 		"Treatment_HealUpgrHP": "The creature decided to upgrade its {~orange}health by +1{~}",
 		"Treatment_HealUpgrDmg": "The creature decided to upgrade its {~orange}damage by +1{~}",
-		"Treatment_HealUpgrSpeed": "The creature decided to upgrade its {~orange}speed by +1{~}"
+		"Treatment_HealUpgrSpeed": "The creature decided to upgrade its {~orange}speed by +1{~}",
 		"dlg": {
 			"townSounds": {
 				"0": "Hu",
@@ -892,7 +892,7 @@
 				"name": "Booby trap",
 				"levels": {
 					"1": {
-						"description": "{~r}@upgradeName@ Enchantment{~}\n\n\nThis enchantment places a magical booby trap on the Ammunition Cart. If the Ammunition Cart is destroyed by an attack, the trap is triggered, dealing {massive magic damage} to the attacker. The damage scales with the number of attacking units, but can be reduced by Magic Resistance skill.\n\nWarmachine efficiency: {+10%}",
+						"description": "{~r}@upgradeName@ Enchantment{~}\n\nWhen an enemy melee attack destroys a Ammunition Cart, it explodes and damages the actual attacker. Damage: {25%} of the attacking stack's number times maximum creature HP, plus {2000}, reduced by the attacker hero's Resistance skill.\n\nLearning Booby Trap disables all Fortification HP, defense and physical protection bonuses for the Ammunition Cart.\n\nWarmachine efficiency: {+10%}",
 						"resources": [
 							15,
 							0,
@@ -919,7 +919,7 @@
 						]
 					},
 					"2": {
-						"description": "{~r}@upgradeName@ level 2 Enchantment{~}\n\n\nThis enchantment places a magical booby trap on the Ammunition Cart. If the Ammunition Cart is destroyed by an attack, the trap is triggered, dealing {massive magic damage} to the attacker.\n\nIncreased damage\nWarmachine efficiency: {+15%}",
+						"description": "{~r}@upgradeName@ Enchantment{~}\n\nWhen an enemy melee attack destroys a Ammunition Cart, it explodes and damages the actual attacker. Damage: {25%} of the attacking stack's number times maximum creature HP, plus {2500}, reduced by the attacker hero's Resistance skill.\n\nLearning Booby Trap disables all Fortification HP, defense and physical protection bonuses for the Ammunition Cart.\n\nWarmachine efficiency: {+15%}",
 						"resources": [
 							10,
 							5,
@@ -946,7 +946,7 @@
 						]
 					},
 					"3": {
-						"description": "{~orange}Ultimate @upgradeName@ Enchantment{~}\n\n\nThis enchantment places a magical booby trap on the Ammunition Cart. If the Ammunition Cart is destroyed by an attack, the trap is triggered, dealing {massive magic damage} to the attacker.\n\nEffect is applied to all warmachines\nWarmachine efficiency: {+30%}",
+						"description": "{~r}@upgradeName@ Enchantment{~}\n\nWhen an enemy melee attack destroys a war machine, it explodes and damages the actual attacker. Damage: {25%} of the attacking stack's number times maximum creature HP, plus {3500}, reduced by the attacker hero's Resistance skill.\n\nLearning Booby Trap disables all Fortification HP, defense and physical protection bonuses for the Ammunition Cart.\n\nWarmachine efficiency: {+30%}",
 						"resources": [
 							15,
 							5,
@@ -1666,7 +1666,7 @@
 				"name": "Fortification",
 				"levels": {
 					"1": {
-					"description": "{~r}@upgradeName@ Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense for all war machines.\n\nHit points: +{250}\n\nDefense +{5}",
+					"description": "{~r}@upgradeName@ Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense for all war machines.\n\nHit points: +{250}\n\nDefense +{5}\n\nPhysical damage per hit is limited to {40%} of the maximum hit points of the current war machine stack.\n\nIf Booby Trap is learned, the Ammunition Cart receives no Fortification hit points, defense or physical protection. The hero's efficiency bonus is unaffected.",
 						"resources": [
 							10,
 							0,
@@ -1692,7 +1692,7 @@
 						]
 					},
 					"2": {
-						"description": "{~r}@upgradeName@ level 2 Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense for all war machines.\nHit points: +{500}\nDefense +{10}\nWarmachine efficiency: +{10%}",
+						"description": "{~r}@upgradeName@ level 2 Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense for all war machines.\nHit points: +{500}\nDefense +{10}\nWarmachine efficiency: +{10%}\n\nPhysical damage per hit is limited to {30%} of the maximum hit points of the current war machine stack.\n\nIf Booby Trap is learned, the Ammunition Cart receives no Fortification hit points, defense or physical protection. The hero's efficiency bonus is unaffected.",
 						"resources": [
 							15,
 							0,
@@ -1718,7 +1718,7 @@
 						]
 					},
 					"3": {
-						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense points for all war machines. Hero gains additional +5% warmachine efficiency for each warmachine skill level from Artillery, First Aid, Ballistics.\nHit points: +{1000}\nDefense +{20}\nEfficiency bonus from warmachine skills",
+						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\n\nThis upgrade strengthens all your war machines, making them more durable in combat. This upgrade adds hit points and increases the defense points for all war machines. Hero gains additional +5% warmachine efficiency for each warmachine skill level from Artillery, First Aid, Ballistics.\nHit points: +{1000}\nDefense +{20}\nEfficiency bonus from warmachine skills\n\nAll your war machines are {immune to physical damage}.\n\nIf Booby Trap is learned, the Ammunition Cart receives no Fortification hit points, defense or physical protection. The hero's efficiency bonus is unaffected.",
 						"resources": [
 							20,
 							0,
@@ -1801,7 +1801,7 @@
 						]
 					},
 					"3": {
-						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\n\nWith the ultimate upgrade the repair of Warmachines becomes so efficient that each time the warmachines get better with each repair. Improved WMs have permanent increased stats or effects.\nWarmachine efficiency: +{2%} for each repair. Max efficiency=hero level.\n\nWarmachine efficiency: {+20%}",
+						"description": "{~orange}Ultimate @upgradeName@ Upgrade{~}\n\nDestroyed Ballistas, Ammunition Carts and First Aid Tents are repaired after combat at no movement cost. Each successfully repaired machine grants {+2%} permanent Warmachine efficiency. The accumulated repair bonus cannot exceed the hero level.\n\nWarmachine efficiency: {+20%}",
 						"resources": [
 							10,
 							5,

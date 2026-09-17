@@ -1,0 +1,96 @@
+ZVSE2
+; TEST: CTRL + left click an allied living stack on the First Aid Tent's turn.
+; Emergency Aid converts half of remaining capacity to HP and spends all capacity.
+; Requires ACM. No repeated normal heals, Overheal rolls or permanent upgrade rolls.
+
+!?FU(OnBeforeBattleUniversal);
+!!FU(ACM_EA_Test_Reset):P;
+!?FU(OnBattleReplay);
+!!FU(ACM_EA_Test_Reset):P;
+!?FU(OnAfterBattleUniversal);
+!!FU(ACM_EA_Test_Reset):P;
+
+!?FU(ACM_EA_Test_Reset);
+!!SN:W^ACM_EA_Armed^/-1;
+!!SN:W^ACM_EA_Target^/-1;
+
+!?CM4;
+!!FU(ACM_EA_Test_Reset):P;
+!!CM:F?y1 D?y2;
+!!FU&y1<>4:E;
+!!FU|y2<0/y2>186:E;
+!!FU&i^battle_isActingSideUiUser^=0:E;
+!!BU:T?y1;
+!!FU&y1<>0:E;
+!!VRy3:Si^battle_current_stack^;
+!!FU|y3<0/y3>41:E;
+!!BMy3:T?y4 N?y5;
+!!FU|y4<>147/y5<=0:E;
+!!BU:Ey2/?y4;
+!!FU|y4<0/y4>41:E;
+!!BMy4:N?y5 F?y6;
+!!VRy6:&12582912;
+!!FU|y5<=0/y6>0:E;
+!!FU(ACM_GetActualStackSide):Py3/?y5;
+!!FU(ACM_GetActualStackSide):Py4/?y6;
+!!FU&y5<>y6:E;
+!!SN:W^ACM_EA_Armed^/y3;
+!!SN:W^ACM_EA_Target^/y4;
+; Keep the normal click, so the engine validates a legal healing target.
+
+!?FU(OnBeforeBattleAction);
+!!FU(ACM_EA_Test_Execute):P;
+; Fallback at BG0 for builds where the earlier event precedes action selection.
+!?BG0;
+!!FU(ACM_EA_Test_Execute):P;
+
+!?FU(ACM_EA_Test_Execute);
+!!SN:W^ACM_EA_Armed^/?y1;
+!!FU|y1<0/y1>41:E;
+!!BG:A?y2 N?y3 E?y4;
+!!SN:W^ACM_EA_Target^/?y5;
+!!FU|y2<>11/y3<>y1/y4<>y5:E;
+!!FU(ACM_EA_Test_Reset):P;             [Consume activation once]
+!!BMy1:T?y2 N?y3;
+!!FU|y2<>147/y3<=0:E;
+!!FU(ACM_GetActualStackSide):Py1/?y6;
+!!FU(ACM_GetActualStackSide):Py4/?y7;
+!!FU|y6<0/y6>1/y7<>y6:E;
+!!BA:Hy6/?y8;
+!!FU|y8<0/y8>155:E;
+!!HEy8:S27/?y9;
+!!BMy4:N?y10 H?y11 L?y12 B?y13 F?y14;
+!!VRy14:&12582912;
+!!FU|y10<=0/y11<=0/y14>0:E;
+!!VRy13&y9=0:Sy10;                    [No resurrection without First Aid]
+!!VRy13&y13<y10:Sy10;                 [Never remove pre-existing extra creatures]
+!!SN&y6=0:W^Tent_Capacity_Att^/?y15;
+!!SN&y6=1:W^Tent_Capacity_Def^/?y15;
+!!FU&y15<=0:E;
+!!VRy16:Sy15 :2;                       [Floor: half the capacity is usable]
+!!VRe1:Sy10 *y11 -y12;                 [Current total HP]
+!!VRe2:Sy13 *y11 -e1;                 [Missing HP up to allowed creature count]
+!!FU&e2<=0:E;
+!!VRe2&e2>y16:Sy16;
+!!VRy17:Se2;                           [Actual HP restored]
+!!VRe1:+y17;
+!!VRe2:Se1 :y11;
+!!VRy18:Se2;                           [Complete creatures]
+!!VRe2:Sy18 *y11;
+!!VRe2:Se1 -e2;
+!!VRy19:Se2;                           [HP in partial creature]
+!!VRy20:S0;
+!!if&y19>0;
+  !!VRy18:+1;
+  !!VRy20:Sy11 -y19;
+!!en;
+!!BG:A12;                             [Spend action, suppress native extra healing]
+!!SN:W^Improved_Tent^/-1;
+!!SN&y6=0:W^Tent_Capacity_Att^/0;
+!!SN&y6=1:W^Tent_Capacity_Def^/0;      [Spend everything, including unused portion]
+!!BMy4:Ny18 Ly20;
+!!VRy21:Sy18 -y10;
+!!VRz1:S^Emergency Aid! Restored %Y17 HP and revived %Y21 creatures. Spent all %Y15 Heal Capacity (50% efficiency).^;
+!!BU&i^battle_isVisible^:Mz1;
+!!BMy4&i^battle_isVisible^:V50;
+!!BU&i^battle_isVisible^:R;

@@ -1,46 +1,33 @@
 {
-	"caption": {
-		"Cn_Simp": "",
-		"en_US": "Advanced Classes Mod 1.11",
-		"ru_RU": "",
-		"ua_UA": ""
-	},
-	"description": {
-		"full": {
-			"Cn_Simp": "",
-			"en_US": "Readme.txt",
-			"ru_RU": "",
-			"ua_UA": ""
-		},
-		"short": {
-			"Cn_Simp": "",
-			"en_US": "Advanced Classes Mod  \r\nA Mod by Perry R, AlfWithCake and anti-victor for Heroes 3 ERA \r\n\r\nAdvanced Classes Mod provides a new class and skill system for Heroes 3. Now it is possible to play three very distinct classes, each with their own strengths and weaknesses.\r\n",
-			"ru_RU": "",
-			"ua_UA": ""
-		}
-	},
-	"author": "PerryR",
-	"homepage": "http://heroescommunity.com/viewthread.php3?TID=41718",
-	"icon": {
-		"file": "Iv.ico",
-		"index": 0
-	},
-	"mod_version": "1.11",
-	"priority": 2,
-	"compatibility": {
-		"incompatible": [
-			"ERA+",
-			"JS - commanders module v.1.01",
-			"JS - main module v.1.16"
-		],
-		"load_after": [
-			"HD Editionfixai (ENG-RU)"
-		],
-		"class": "default",
-		"entries": {}
-	},
-	"platform": "era",
-	"info_version": "1.0",
-	"plugins": {},
-	"category": "gameplay"
+  "name": {
+    "en": "Advanced Classes Mod"
+  },
+  "description": {
+    "en": "readme.txt"
+  },
+  "author": "PerryR",
+  "homepage": "https://github.com/PerryR-1971/Advanced-Classes-Mod",
+  "support": "http://heroescommunity.com/viewthread.php3?TID=41718",
+  "icon": "iv.ico",
+  "version": "1.12",
+  "category": "gameplay",
+  "compatibility": {
+    "requires": [
+      "WoG",
+	  "Era Erm Framework",
+      "Game Enhancement Mod"
+    ],
+    "load_after": [
+      "WoG",
+      "Game Enhancement Mod",
+      "Difficulty Mod",
+      "WoG Graphics Fix Lite",
+	  "WoG Graphics Fix"
+    ],
+    "incompatible": [
+      "ERA+",
+      "JS - commanders module v.1.02",
+      "JS - main module v.1.16"
+    ]
+  }
 }

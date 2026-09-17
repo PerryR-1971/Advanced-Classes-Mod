@@ -1,0 +1,113 @@
+ZVSE2
+; TEST ONLY: CTRL + left click on an enemy during the Ballista's normal turn.
+; Uses ACM/007 normal extra shots; no manual calls into the native shooting routine.
+; Remove this file to disable the experiment. Requires advanced classes skills.erm.
+
+!?FU(OnBeforeBattleUniversal);
+!!FU(ACM_AV_Test_Reset):P;
+!?FU(OnBattleReplay);
+!!FU(ACM_AV_Test_Reset):P;
+
+!?FU(ACM_AV_Test_Reset);
+!!SN:W^ACM_AV_Armed^/-1;
+!!SN:W^ACM_AV_Target^/-1;
+!!SN:W^ACM_AV_Active^/-1;
+!!re i/0/41;
+  !!SN:W^ACM_AV_Used_%i^/0;
+!!en;
+
+!?CM4;
+!!SN:W^ACM_AV_Armed^/-1;
+!!CM:F?y1 D?y2;
+!!FU&y1<>4:E;
+!!FU|y2<0/y2>186:E;
+!!FU&i^battle_isActingSideUiUser^=0:E;
+!!BU:T?y1;
+!!FU&y1<>0:E;                         [No volley during tactics]
+!!VRy3:Si^battle_current_stack^;
+!!FU|y3<0/y3>41:E;
+!!BMy3:T?y4 N?y5;
+!!FU|y4<>146/y5<=0:E;
+!!SN:W^ACM_AV_Used_%Y3^/?y4;
+!!FU&y4>0:E;
+!!BU:Ey2/?y4;
+!!FU|y4<0/y4>41:E;
+!!BMy4:N?y5;
+!!FU&y5<=0:E;
+!!FU(ACM_GetActualStackSide):Py3/?y5;
+!!FU(ACM_GetActualStackSide):Py4/?y6;
+!!FU&y5=y6:E;
+!!SN:W^ACM_AV_Armed^/y3;
+!!SN:W^ACM_AV_Target^/y4;
+; Let the normal click produce a legal shooting action. No forced shots in melee.
+
+!?FU(ACM_OnBeforeShoot);
+!!SN:W^ACM_AV_Armed^/?y1;
+!!SN:W^ACM_AV_Target^/?y2;
+!!FU|x1<>y1/x2<>y2:E;
+!!SN:W^ACM_AV_Armed^/-1;
+!!SN:W^ACM_AV_Used_%X1^/?y3;
+!!FU&y3>0:E;
+!!SN:W^ACM_AV_Used_%X1^/1;
+!!SN:W^ACM_AV_Active^/x1;
+!!SN:W^ACM_AV_Count^/0;
+!!BMx1:I?y3;
+!!BA:Hy3/?y4;
+!!VRy5:S0;
+!!HEy4&y4>=0/y4<=155:S20/?y5;
+!!VRy6:S9;
+!!VRy6&y5=3:S8;                       [ACM: one base shot, plus native Expert's second shot]
+!!SN:W^007.ShootA.Times^/y6;           [Override all other extra-shot bonuses]
+!!BMx1:U3/?y7;
+!!BMx1&y7<10:U3/10;                   [Supply the test volley with ten arrows]
+!!VRz1:S^Arrow Volley! Up to 10 arrows; this Ballista is then disabled.^;
+!!BU&i^battle_isVisible^:Mz1;
+
+!?FU(ACM_OnAfterShoot);
+!!SN:W^ACM_AV_Active^/?y1;
+!!FU&x1<>y1:E;
+!!SN:W^ACM_AV_Count^/d1;
+!!SN:W^ACM_AV_Count^/?y2;
+!!if&y2>=10;
+  !!SN:W^007.ShootA.Times^/0;
+  !!BMx1:U3/0;
+!!en;
+
+!?BG1;
+!!SN:W^ACM_AV_Active^/?y1;
+!!FU|y1<0/y1>41:E;
+!!SN:W^ACM_AV_Active^/-1;
+!!SN:W^007.ShootA.Times^/0;
+!!FU(ACM_AV_Test_Disable):Py1;
+!!SN:W^ACM_AV_Count^/?y2;
+!!VRz1:S^Arrow Volley finished: %Y2 arrows. Ballista disabled for this battle.^;
+!!BU&i^battle_isVisible^:Mz1;
+
+!?FU(OnCombatRound);
+!!re i/0/41;
+  !!FU(ACM_AV_Test_Disable):Pi;
+!!en;
+
+!?FU(OnBeforeBattleStackTurn);
+!!FU(ACM_AV_Test_Disable):Px1;
+
+!?BG0;
+!!BG:N?y1;
+!!FU|y1<0/y1>41:E;
+!!SN:W^ACM_AV_Used_%Y1^/?y2;
+!!SN:W^ACM_AV_Active^/?y3;
+!!if&y2=1/y3<>y1;
+  !!BG:A12;
+  !!FU(ACM_AV_Test_Disable):Py1;
+!!en;
+
+!?FU(ACM_AV_Test_Disable);
+!!FU|x1<0/x1>41:E;
+!!SN:W^ACM_AV_Used_%X1^/?y1;
+!!FU&y1<>1:E;
+!!BMx1:T?y2 N?y3;
+!!FU|y2<>146/y3<=0:E;
+!!BMx1:U3/0 Fd|(MON_FLAG_ACTED);
+
+!?FU(OnAfterBattleUniversal);
+!!FU(ACM_AV_Test_Reset):P;

@@ -1,0 +1,6 @@
+{
+  "ACM_Adventure_Movement": {
+    "Fly_Cost": "\nMovement cost per cast: {@movement@} points.",
+    "Not_Enough": "Casting Fly requires {@movement@} movement points."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ACM_Dimension_Door": {
+    "Description_3": "{~@color@}@rank@ Dimension Door{~}\n\nTwice per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point cost per cast: {40 SP}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@",
+    "Description_4": "{~@color@}@rank@ Dimension Door{~}\n\nTwice per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point costs per day: {40 / 60}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@",
+    "Description_5": "{~@color@}@rank@ Dimension Door{~}\n\nThree times per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point costs per day: {40 / 60 / 100}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@",
+    "Next_Cast": "Next cast: {@cost@ SP}.",
+    "Daily_Limit_Reached": "Daily limit reached.",
+    "Description_0": "{~@color@}Dimension Door{~}\n\nOnce per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point cost per cast: {40 SP}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@",
+    "Description_1": "{~@color@}@rank@ Dimension Door{~}\n\nOnce per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point cost per cast: {40 SP}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@",
+    "Description_2": "{~@color@}@rank@ Dimension Door{~}\n\nOnce per day, you may teleport your hero to a visible, unoccupied location on the adventure map.\n\nSpell point cost per cast: {40 SP}.\nMovement cost per cast: {@movement@} points.\nCast today: {@casts@}. @status@"
+  }
+}

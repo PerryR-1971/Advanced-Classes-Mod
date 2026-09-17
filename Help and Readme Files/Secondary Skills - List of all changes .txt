@@ -1,7 +1,7 @@
 Adventurer skills.
 	First Aid
-		First Aid Tent heals up to 30/50/75/150/250 HP in addition to 10*HeroLevel per heal (15*HeroLevel per heal at >=HLvL25), able to revive dead creatures. Also, revives dead units of random stack after 			combat by up to (5-40+2*Lvl)x1/2/3/4/5 HP total. 
-		NEW: Tents now resurrect in combat but have a limited heal power called "Heal Capacity". Heal Capacity is indicated by the "damage" value from your tent during combat and is 2% of your total army HP + 		other bonuses. When the Heal Capacity is depleted you will be notified in the battle log and you cannot resurrect units anymore (only heal them).
+		First Aid Tent heals up to 30/50/75/150/250 HP in addition to 6*HeroLevel per heal (10*HeroLevel per heal at >=HLvL25), able to revive dead creatures. Also, revives dead units of random stack after 			combat by up to (5-40+2*Lvl)x1/2/3/4/5 HP total. 
+		NEW: Tents now resurrect in combat but have a limited heal power called "Heal Capacity". Heal Capacity is indicated by the "damage" value from your tent during combat and is 1.5% of your total army HP + 		other bonuses. When the Heal Capacity is depleted you will be notified in the battle log and you cannot resurrect units anymore (only heal them).
 		NEW: Increases hp of all stacks by 2/4/6/8/10%. 
 		
 	Pathfinding
@@ -81,7 +81,7 @@ Warrior	skills.
 		Decreases physical damage received by 5/10/15/20/25%.
 		
 	Archery
-		Increases ranged damage by 10/25/50/65/75%.
+		Increases ranged damage by 20/30/40/50/60%.
 		
 	Warfare (Tactics)
 		Skill remade. Now gives 1/1/2/3/4 attack and defense bonus and 0/1/1/2/2 speed. On Master and on Grandmaster gives +1 bonus damage to all troops.
@@ -103,3 +103,4 @@ Warrior	skills.
 	Resistance
 		10/15/20/25/30% magic resistance (dwarf type).
 		NEW: Decreases all (normal or critical) spell damage of enemy hero by 10/15/20/25/30% (golem type).
+Heal Capacity First Aid bonus (both battle sides): Basic +100, Advanced +200, Expert +300, Master +500, Grandmaster +1000 HP.

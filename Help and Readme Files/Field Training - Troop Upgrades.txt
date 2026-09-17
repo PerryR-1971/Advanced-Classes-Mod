@@ -1,0 +1,64 @@
+FIELD TRAINING - TROOP UPGRADE SYSTEM
+=====================================
+
+OVERVIEW
+--------
+Field Training is the troop-development counterpart to Spell Training. It allows
+heroes to permanently improve creature families in their own army.
+
+Open the Field Training window by right-clicking an occupied troop slot in the
+hero screen. Warrior, Adventurer and Mage class heroes can use the system.
+Right-click an upgrade button or its text for detailed rules, its maximum effect
+and the total Gold cost required to reach its fixed maximum level.
+
+
+TRAINING CAPACITY
+-----------------
+Each purchased upgrade level consumes one training point.
+
+Mage:        1 starting point, +1 point every 5 hero levels
+Adventurer:  3 starting points, +1 point every 3 hero levels
+Warrior:     5 starting points, +1 point every 2 hero levels
+
+Economy specialists keep the starting points of their class, receive 10 extra
+starting points and gain 1 point per hero level instead of the normal class
+growth. Five Mithril can be exchanged for one permanent additional point.
+
+
+COSTS AND LIMITS
+----------------
+Gold cost for the next upgrade level: 1,000 x level^2 + 5,000.
+
+Next level:       1        5         10         15          20
+Level cost:   6,000   30,000    105,000    230,000     405,000
+Total cost:   6,000   80,000    435,000  1,315,000   2,970,000
+
+- Stack size does not affect the price.
+- An upgrade cannot exceed the hero's current level or its own maximum level.
+- A creature family may receive several different upgrades.
+- Upgrades belong to the combination of hero and creature family.
+- Base and upgraded creatures share their training. Splitting or moving a stack
+  within the same hero's army therefore does not remove its improvements.
+
+
+AVAILABLE UPGRADES
+------------------
+Extra Strike             +1% chance per level                         Max. 15
+Critical Chance          +1.5% chance per level                       Max. 15
+Critical Damage          +2% critical damage per level                Max. 20
+Block                     +2% chance to halve physical damage          Max. 15
+Flat Damage Reduction     Hero level x upgrade level less damage       Max. 15
+Flat Damage               Hero level x upgrade level more damage       Max. 20
+Damage vs. Ranged         +2% damage per level against shooters        Max. 15
+Damage vs. Melee          +1% damage per level against non-shooters    Max. 15
+Damage vs. Undead/Elem.   +3% damage per level                         Max. 15
+Combat Speed              +4% speed per level, normally rounded        Max. 10
+Crushing Blow             +1% chance per level                         Max. 20
+Life Leech                +0.5% life leech per level                    Max. 10
+Act Again                 +1% chance per level                          Max. 10
+Act First                 +3% chance per level                          Max. 20
+
+Crushing Blow reduces the target's Attack and Defense by 2 and Speed by 1.
+Act Again can trigger at most once per stack and combat round.
+Act First grants +50 Speed during the first combat round only.
+
